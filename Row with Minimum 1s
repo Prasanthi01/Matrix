@@ -1,0 +1,31 @@
+class Solution {
+  public:
+    int minRow(vector<vector<int>> &mat) {
+        // code here
+        int n=mat.size();
+        int m=mat[0].size();
+        int mini=INT_MAX;
+        int temp=-1;
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            count=0;
+            for(int j=0;j<m;j++)
+            {
+                if(mat[i][j]==1)
+                {
+                    count++;
+                }
+            }
+            if(count<mini)
+            {
+                mini=count;
+                temp=i+1;
+            }
+            
+        }
+        return temp;
+        
+        
+    }
+};
